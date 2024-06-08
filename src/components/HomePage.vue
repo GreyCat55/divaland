@@ -1,11 +1,6 @@
-<script setup lang="ts">
-import MenuBar from '../components/MenuBar.vue'
-import NavBar from '../components/NavBar.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <MenuBar />
-  <NavBar />
   <div class="grid grid-cols-3 gap-4">
     <div>Map</div>
     <div>Dev/Shop Updates</div>

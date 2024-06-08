@@ -11,26 +11,27 @@
 }
 </style>
 
-<script>
+<script lang="ts">
 import axios from 'axios'
 import clockBodyAsset from '../assets/clock_body.png'
 import clockOverlayAsset from '../assets/clock_overlay.png'
 
 export default {
-  name: 'Clock',
+  name: 'ClockComponent',
   data() {
     return {
-      interval: null,
-      theTime: {}
+      interval: 0,
+      theTime: '',
+      clockCanvas: this.$refs.clockCanvas
     }
   },
   methods: {
-    setUpClock(time) {
-      let cvn = this.$refs.clockCanvas
-      let ctx = cvn.getContext('2d')
+    setUpClock(time: string) {
+      var cvn: any = this.$refs.clockCanvas
+      var ctx = cvn.getContext('2d')
 
-      let clockBody = new Image()
-      let clockOverlay = new Image()
+      var clockBody = new Image()
+      var clockOverlay = new Image()
 
       clockBody.src = clockBodyAsset
       clockOverlay.src = clockOverlayAsset

@@ -7,6 +7,7 @@ import VueAxios from 'vue-axios'
 
 const app = createApp(App)
 
+axios.defaults.withCredentials = true
 app.use(VueAxios, axios)
 app.use(router)
 
