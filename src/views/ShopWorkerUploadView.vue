@@ -2,6 +2,7 @@
 import MenuBar from '../components/MenuBar.vue'
 import ColourPalette from '../components/ColourPalette.vue'
 import ErrorReport from '../components/ErrorReport.vue'
+import LoadingOverlay from '../components/LoadingOverlay.vue'
 </script>
 
 <style>
@@ -121,13 +122,13 @@ import ErrorReport from '../components/ErrorReport.vue'
             <p class="text-3xl text-center">Thumbnail Preview</p>
             <div class="w-full max-w-xs mx-auto mb-6 bg-white border rounded" width="400%">
               <div id="thumbnailPreview"></div>
-              <!--<img class="shopoverlay" :src="previewImage" />-->
+              <img :src="thumbnailPreview" />
             </div>
           </div>
         </div>
       </div>
     </span>
-    <span v-else><p>The shop is restricted to staff only</p></span>
+    <span v-else><LoadingOverlay /></span>
   </main>
 </template>
 
@@ -142,7 +143,9 @@ export default {
     return {
       role: 0,
       previewImage: '',
+      thumbnailPreview: '',
       shopUpload: new Blob(),
+      thumbnail: new Blob(),
       n: '',
       pr: 0,
       c: '',
@@ -155,6 +158,8 @@ export default {
       this.ct = selectedColour
     },
     preview(e: any) {
+      var parentExport = this
+
       const image = e.target.files[0]
       const reader = new FileReader()
       reader.readAsDataURL(image)
@@ -223,11 +228,16 @@ export default {
             draggable: true
           })
           thumbnailLayer.add(thumbnail)
+          parentExport.thumbnailPreview = thumbnailStage.toDataURL({ pixelRatio: 1 })
         }
+
+        thumbnailStage.on('dragmove', (e) => {
+          e.evt.preventDefault()
+          this.thumbnailPreview = thumbnailStage.toDataURL({ pixelRatio: 1 })
+        })
 
         var scaleBy = 1.01
         thumbnailStage.on('wheel', (e) => {
-          // stop default scrolling
           e.evt.preventDefault()
 
           var oldScale = thumbnailStage.scaleX()
@@ -253,12 +263,28 @@ export default {
             y: pointer.y - mousePointTo.y * newScale
           }
           thumbnailStage.position(newPos)
+
+          this.thumbnailPreview = thumbnailStage.toDataURL({ pixelRatio: 1 })
         })
       }
     },
     async shopSubmission() {
+      var thumbnailBytes = atob(this.thumbnailPreview.split(',')[1])
+      var thumbnailMIMEContent = this.thumbnailPreview.split(',')[0].split(':')[1].split(';')[0]
+
+      var ab = new ArrayBuffer(thumbnailBytes.length)
+
+      var ia = new Uint8Array(ab)
+
+      for (var i = 0; i < thumbnailBytes.length; i++) {
+        ia[i] = thumbnailBytes.charCodeAt(i)
+      }
+
+      this.thumbnail = new Blob([ab], { type: thumbnailMIMEContent })
+
       let formData = new FormData()
       formData.append('file', this.shopUpload)
+      formData.append('file', this.thumbnail)
       formData.append('n', this.n)
       formData.append('pr', this.pr)
       formData.append('category', this.c + '/' + this.s + '/')

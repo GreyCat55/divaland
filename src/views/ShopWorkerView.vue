@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MenuBar from '../components/MenuBar.vue'
-import helix from 'ldrs/helix'
+import LoadingOverlay from '../components/LoadingOverlay.vue'
 </script>
 
 <style>
@@ -32,7 +32,7 @@ import helix from 'ldrs/helix'
       </div>
     </div></span
   >
-  <span v-else><p>The shop is restricted to staff only</p></span>
+  <span v-else><LoadingOverlay /></span>
 </template>
 
 <script lang="ts">

@@ -87,6 +87,7 @@ export default {
           p: this.p
         })
         .then((response) => {
+          //TODO redirect to successfulsignup if account is unverified
           this.$router.push('/')
         })
         .catch((error) => {
@@ -95,7 +96,6 @@ export default {
     }
   },
   mounted() {
-    //note to self: always use setTimeout to call exported methods in axios' then. Asynchronous functions be like...
     axios
       .get('http://localhost:3000/reportErrors', {
         headers: {

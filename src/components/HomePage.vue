@@ -1,9 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LoadingOverlay from './LoadingOverlay.vue'
+</script>
 
 <template>
   <div class="grid grid-cols-3 gap-4">
     <div>Map</div>
-    <div>Dev/Shop Updates</div>
+    <div>Divaland Updates</div>
     <div>Diva Spotlight</div>
     <div>ChangeLog</div>
     <div>Stats Board</div>

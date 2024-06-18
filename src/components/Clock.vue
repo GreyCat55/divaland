@@ -49,7 +49,7 @@ export default {
   mounted() {
     //sync clock with real time
     axios
-      .get('http://localhost:3000/clock', {
+      .get('http://stage.api.diva.land/clock', {
         headers: {
           'ngrok-skip-browser-warning': '1'
         }

@@ -14,8 +14,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.2.1",
     "axios": "^1.6.8",
     "express-validator": "^7.0.1",
+    "flaticon": "^0.1.0",
     "konva": "^9.3.11",
     "ldrs": "^1.0.2",
     "vue": "^3.4.21",

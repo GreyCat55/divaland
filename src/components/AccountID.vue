@@ -6,13 +6,22 @@
     ref="canvasContainer"
     class="inline-grid grid-cols-2 gap-6 justify-items-start"
     ><canvas ref="idCanvas" class="h-full"></canvas>
-    <a href="/signout">
-      <button
-        class="text-violet-200 zyzol border bg-violet-500 hover:bg-violet-400 text-white font-bold py-2 px-4 border-b-4 border-violet-800 hover:border-violet-500 rounded"
+    <div>
+      <a href="/signout">
+        <button
+          class="text-violet-200 zyzol border bg-violet-500 hover:bg-violet-400 text-white font-bold py-2 px-4 border-b-4 border-violet-800 hover:border-violet-500 rounded"
+        >
+          Sign out
+        </button></a
       >
-        Sign out
-      </button></a
-    >
+      <a href="/editprofile">
+        <button
+          class="text-violet-200 zyzol border bg-violet-500 hover:bg-violet-400 text-white font-bold py-2 px-4 border-b-4 border-violet-800 hover:border-violet-500 rounded"
+        >
+          Edit Profile
+        </button></a
+      >
+    </div>
   </span>
   <span class="inline-grid grid-cols-1 justify-items-center" v-else>
     <a href="/signup">
