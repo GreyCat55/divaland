@@ -18,17 +18,18 @@ import AccountID from './AccountID.vue'
 </style>
 
 <template>
-  <div class="bg-blend-multiply bg-gradient-to-t from-blue-500 to-violet-500">
-    <div class="grid grid-cols-3 gap-x-4 gap-y-0 items-end bg-[url('src/assets/star_overlay.png')]">
-      <div>
-        <img src="../assets/logo_splash.png" width="75%" />
-      </div>
-      <div class="flex justify-center my-auto">
-        <Clock />
-      </div>
-      <div class="flex justify-center m-auto">
-        <AccountID />
-      </div>
+  <!--   <div class="bg-blend-multiply bg-gradient-to-t from-blue-500 to-violet-500">
+    <div class="grid grid-cols-3 gap-x-4 gap-y-0 items-end bg-[url('src/assets/star_overlay.png')]"> -->
+  <div class="grid grid-cols-3 gap-x-4 gap-y-0 items-end">
+    <div></div>
+    <div class="flex justify-center my-auto">
+      <img src="../assets/logo_alternate.png" width="75%" />
     </div>
+    <div class="flex justify-center m-auto"></div>
+    <div></div>
+    <div class="flex justify-center my-auto zyzol text-white text-center">
+      A PlushKlavier and Co. Production
+    </div>
+    <div></div>
   </div>
 </template>

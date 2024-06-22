@@ -312,7 +312,7 @@ export default {
       .then((response) => {
         this.role = response['data'][0]['diva_role']
         if (this.role < 1 || typeof this.role === 'undefined') {
-          this.$router.push('/')
+          this.$router.push('/shopworker/upload')
         }
       })
   }
