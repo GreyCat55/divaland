@@ -5,7 +5,10 @@
     v-if="signedIn"
     ref="canvasContainer"
     class="inline-grid grid-cols-2 gap-6 justify-items-start"
-    ><canvas ref="idCanvas" class="h-full"></canvas>
+  >
+    <a href="/profileEditor">
+      <canvas ref="idCanvas" class="h-full"></canvas>
+    </a>
     <div>
       <a href="/signout">
         <button
