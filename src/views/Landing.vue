@@ -36,19 +36,18 @@
 
 <template>
   <div
-    class="parallax h-[90vh] grid grid-rows-1 bg-white overflow-x-hidden overflow-y-visible pt-[30vh] bg-gradient-to-b from-violet-900 to-violet-500"
+    class="parallax h-[100vh] grid grid-rows-1 bg-white overflow-x-hidden overflow-y-visible bg-gradient-to-b from-violet-900 to-violet-500"
   >
+    <div class="bg-[url('src/assets/landing/stars.png')] bg-cover w-full"></div>
     <div
-      class="absolute h-[50vh] w-full top-0 bg-[url('src/assets/landing/stars.png')] bg-cover"
-    ></div>
-    <img
       v-for="(layer, index) in layers"
       :key="index"
-      :src="layer.src"
-      :class="`parallax-layer parallax-speed-${index + 1} h-full w-full object-cover`"
-    />
+      :class="`parallax-layer parallax-speed-${index + 1} absolute top-[10vh] bottom-[10vh]  overflow-visible`"
+    >
+      <img :src="layer.src" class="w-full" style="height: auto" />
+    </div>
     <div
-      class="parallax__cover parallax-layer parallax-speed-6 absolute top-[90vh] h-screen w-full text-white text-2xl p-10"
+      class="parallax__cover parallax-layer parallax-speed-6 absolute top-[90vh] h-[110vh] w-full text-white text-2xl p-10 z-40"
     >
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum saepe deleniti
       animi unde? Eius ipsa distinctio labore perferendis culpa possimus reiciendis exercitationem,

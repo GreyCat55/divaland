@@ -48,14 +48,9 @@ const router = createRouter({
       component: () => import('../views/ShopWorkerEditView.vue')
     },
     {
-      path: '/shops',
-      name: 'shops',
-      component: () => import('../views/StoreSelectView.vue')
-    },
-    {
-      path: '/shops/thedivalandclothingco',
-      name: 'shops_thedivalandclothingco',
-      component: () => import('../views/GreatDivalandClothingCoView.vue')
+      path: '/landing',
+      name: 'landing',
+      component: () => import('../views/Landing.vue')
     }
   ]
 })
