@@ -46,6 +46,11 @@ const router = createRouter({
       path: '/shopworker/edit',
       name: 'shopworkeredit',
       component: () => import('../views/ShopWorkerEditView.vue')
+    },
+    {
+      path: '/landing',
+      name: 'landing',
+      component: () => import('../views/Landing.vue')
     }
   ]
 })
