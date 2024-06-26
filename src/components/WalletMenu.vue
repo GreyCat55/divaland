@@ -52,7 +52,7 @@ import AccountID from './AccountID.vue'
 export default {
   name: 'WalletMenu',
   data() {
-    return
+    return {}
   },
   methods: {
     openWallet(e: any) {
