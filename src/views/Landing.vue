@@ -46,6 +46,7 @@
     >
       <img :src="layer.src" class="w-full" style="height: auto" />
     </div>
+
     <div
       class="parallax__cover parallax-layer parallax-speed-6 absolute top-[90vh] h-[110vh] w-full text-white text-2xl p-10 z-40"
     >

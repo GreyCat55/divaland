@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Zyzol';
+  src: url('@/assets/fonts/Zyzol.otf');
+}
+
+@font-face {
+  font-family: 'Zyzol Outline';
+  src: url('@/assets/fonts/ZyzolOutline.otf');
+}
+
+@font-face {
+  font-family: 'Zyzol Shadow';
+  src: url('@/assets/fonts/ZyzolShadow.otf');
+}
+
+@font-face {
+  font-family: 'Zyzol Round';
+  src: url('@/assets/fonts/ZyzolRound.otf');
+}
